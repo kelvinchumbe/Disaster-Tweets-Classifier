@@ -67,8 +67,11 @@ if st.button("Get Tweets"):
     y_pred = bilstm_model.predict(text)
     y_pred = reverseEncoded(y_pred)
 
-    result_df = pd.concat([tweets_df["text"].values, y_pred],
-                          axis=1, keys=["text", "prediction"])
+    # result_df = pd.concat([tweets_df["text"].values, y_pred],
+    #                       axis=1, keys=["text", "prediction"])
+
+    result_df = pd.DataFrame(
+        data={"text": tweets_df["text"].values, "prediction": y_pred})
 
     # Display to user model predictions
     st.write(result_df)
