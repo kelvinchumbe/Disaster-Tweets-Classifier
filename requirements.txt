@@ -1,6 +1,6 @@
 streamlit
-numpy
-tensorflow-cpu
 pandas
+numpy
 tweepy
+tensorflow-cpu
 nltk
