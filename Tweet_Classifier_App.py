@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import seaborn as sns
 import tweepy
 import pickle
@@ -68,9 +67,6 @@ if st.button("Get Tweets"):
     # Make predictions
     y_pred = bilstm_model.predict(text)
     y_pred = reverseEncoded(y_pred)
-
-    # # Combine tweets and their prediction on a dataframe
-    # tweets_df["prediction"] = y_pred
 
     result_df = pd.concat([tweets_df["text"].values, y_pred],
                           axis=1, keys=["text", "prediction"])

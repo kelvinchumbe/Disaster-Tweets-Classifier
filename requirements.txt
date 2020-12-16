@@ -3,5 +3,4 @@ numpy
 tensorflow-cpu
 pandas
 tweepy
-re
 nltk
