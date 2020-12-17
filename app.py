@@ -1,19 +1,19 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import tweepy
-import pickle
+# import pandas as pd
+# import numpy as np
+# import tweepy
+# import pickle
 
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import load_model
+# from tensorflow.keras.preprocessing.sequence import pad_sequences
+# from tensorflow.keras.models import load_model
 
-# from preprocess_utils import *
-# from twitter_scapper import *
+# # from preprocess_utils import *
+# # from twitter_scapper import *
 
-import re
-import nltk
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
+# import re
+# import nltk
+# from nltk.corpus import stopwords
+# from nltk.stem import WordNetLemmatizer
 
 st.write("HELLO WORLD")
 s = st.text_input("Enter Text: ")
