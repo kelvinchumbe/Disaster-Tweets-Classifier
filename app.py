@@ -289,24 +289,24 @@ num_tweets = st.text_input("Enter number of tweets to pull: ")
 
 
 if st.button("Get Tweets"):
-    bar = st.progress(0)
-    # Scrap tweets using the twitter api
-    try:
-        tweets_list = scrap_tweets(
-            api, search_words, date_since, num_tweets=int(num_tweets))
-    except TweepError as e:
-        if 'Failed to send request:' in e.reason:
-            st.write("Time out error caught.")
+    # bar = st.progress(0)
+    # # Scrap tweets using the twitter api
+    # try:
+    #     tweets_list = scrap_tweets(
+    #         api, search_words, date_since, num_tweets=int(num_tweets))
+    # except TweepError as e:
+    #     if 'Failed to send request:' in e.reason:
+    #         st.write("Time out error caught.")
 
-    bar.progress(100)
-    st.write("Done")
+    # bar.progress(100)
+    # st.write("Done")
 
-    # Put tweets in a dataframe and display sample 30 tweets
-    tweets_df = pd.DataFrame(data=tweets_list, columns=[
-        "tweet_id", "date", "username", "location", "text"])
+    # # Put tweets in a dataframe and display sample 30 tweets
+    # tweets_df = pd.DataFrame(data=tweets_list, columns=[
+    #     "tweet_id", "date", "username", "location", "text"])
 
-    st.subheader("Sample of 20 tweets that have been retrieved from Twitter")
-    st.write(tweets_df.sample(20))
+    # st.subheader("Sample of 20 tweets that have been retrieved from Twitter")
+    # st.write(tweets_df.sample(20))
 
     # # Get the texts from the tweets for preprocessing
     # tweets_text = tweets_df.text
