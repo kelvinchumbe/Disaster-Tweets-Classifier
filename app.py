@@ -16,6 +16,8 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 st.write("HELLO WORLD")
+s = st.text_input("Enter Text: ")
+st.write(s)
 
 # # Download stopwords from nltk module
 # nltk.download('stopwords')
