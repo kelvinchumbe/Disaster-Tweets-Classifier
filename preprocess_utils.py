@@ -4,11 +4,11 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import numpy as np
 
-# Download stopwords from nltk module
-nltk.download('stopwords')
+# # Download stopwords from nltk module
+# nltk.download('stopwords')
 
-# Download wordnet from nltk module
-nltk.download('wordnet')
+# # Download wordnet from nltk module
+# nltk.download('wordnet')
 
 # Define some common contractions in English
 contractions = {
