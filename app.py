@@ -305,43 +305,41 @@ if st.button("Get Tweets"):
     tweets_df = pd.DataFrame(data=tweets_list, columns=[
         "tweet_id", "date", "username", "location", "text"])
 
-    # x = st.slider("Select sample of tweets to display")
-
     st.subheader("Sample of 20 tweets that have been retrieved from Twitter")
     st.write(tweets_df.sample(20))
 
-    # Get the texts from the tweets for preprocessing
-    tweets_text = tweets_df.text
+    # # Get the texts from the tweets for preprocessing
+    # tweets_text = tweets_df.text
 
-    # Preprocess tweets using helper functions in preprocess_utils module
-    tweets_text = tweets_text.apply(lambda x: preprocessTweets(x))
+    # # Preprocess tweets using helper functions in preprocess_utils module
+    # tweets_text = tweets_text.apply(lambda x: preprocessTweets(x))
 
-    # Load tokenizer object
-    tokenizer_file = "tokenizer.pkl"
-    tokenizer = pickle.load(open(tokenizer_file, "rb"))
+    # # Load tokenizer object
+    # tokenizer_file = "tokenizer.pkl"
+    # tokenizer = pickle.load(open(tokenizer_file, "rb"))
 
-    # Generate sequences using the tokenizer object used in training with a vocabulary already determined
-    sequences = tokenizer.texts_to_sequences(tweets_text)
+    # # Generate sequences using the tokenizer object used in training with a vocabulary already determined
+    # sequences = tokenizer.texts_to_sequences(tweets_text)
 
-    # Use the same sequences length as during training
-    max_sequence_len = 50
+    # # Use the same sequences length as during training
+    # max_sequence_len = 50
 
-    # Pad sequences to max sequence length
-    text = pad_sequences(sequences, maxlen=max_sequence_len)
+    # # Pad sequences to max sequence length
+    # text = pad_sequences(sequences, maxlen=max_sequence_len)
 
-    # Load keras model
-    bilstm_model_file = "bilstm_model.h5"
-    bilstm_model = load_model(bilstm_model_file, compile=False)
+    # # Load keras model
+    # bilstm_model_file = "bilstm_model.h5"
+    # bilstm_model = load_model(bilstm_model_file, compile=False)
 
-    # Make predictions
-    y_pred = bilstm_model.predict(text)
-    y_pred = reverseEncoded(y_pred)
+    # # Make predictions
+    # y_pred = bilstm_model.predict(text)
+    # y_pred = reverseEncoded(y_pred)
 
-    # result_df = pd.concat([tweets_df["text"].values, y_pred],
-    #                       axis=1, keys=["text", "prediction"])
+    # # result_df = pd.concat([tweets_df["text"].values, y_pred],
+    # #                       axis=1, keys=["text", "prediction"])
 
-    result_df = pd.DataFrame(
-        data={"text": tweets_df["text"].values, "prediction": y_pred})
+    # result_df = pd.DataFrame(
+    #     data={"text": tweets_df["text"].values, "prediction": y_pred})
 
-    # Display to user model predictions
-    st.write(result_df)
+    # # Display to user model predictions
+    # st.write(result_df)
