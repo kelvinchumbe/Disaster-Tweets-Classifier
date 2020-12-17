@@ -19,7 +19,7 @@ from nltk.stem import WordNetLemmatizer
 # s = st.text_input("Enter Text: ")
 # st.write(s)
 
-Define some common contractions in English
+# Define some common contractions in English
 contractions = {
     "ain't": "am not / are not / is not / has not / have not",
     "aren't": "are not / am not",
